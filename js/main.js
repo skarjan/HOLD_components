@@ -34,15 +34,49 @@ for (let i = 0; i < anchors.length; i++) {
 
     // prevents following the link
     event.preventDefault();
-    log(event);
-    log(event.currentTarget.firstElementChild);
+    // log(event.currentTarget.firstElementChild);
 
     // animate icon
     let icon = event.currentTarget.firstElementChild;
-
+    if (!hasClass(icon, "rotate45deg--in")) {
+      modifyClassFromAll("faq__icon-plus", "rotate45deg--in", "remove")
+      icon.classList.add("rotate45deg--in");
+    } else {
+      icon.classList.remove("rotate45deg--in");
+    }
     // answer related to the clicked question
     let answer = event.currentTarget.parentElement.nextElementSibling;
-
-    answer.classList.toggle("hide");
+      
+    if (!hasClass(answer, "hide")){
+      answer.classList.add("hide");
+    } else {
+      answer.classList.remove("hide");
+      modifyClassFromAll("faq__answer", "hide", "add");
+    }
   })
+}
+
+function hideAllElements(selector, className){}
+
+function modifyClassFromAll (element, className, modifier) {
+  let el = document.querySelectorAll("."+element)
+  for (let i = 0; i < el.length; i++) {
+    if (hasClass(el[i], className)) {
+      if(modifier==="add"){
+        el[i].classList.add(className);
+      } else if(modifier==="remove"){
+        el[i].classList.remove(className);
+      } else {
+        return false;
+      }
+    } 
+  }
+}
+function hasClass(element, className){
+  
+  if (element.classList != "") {
+    return element.classList.contains(className);
+  } else {
+    return false + `, element doesnt appear to have classes at all.`;
+  }
 }

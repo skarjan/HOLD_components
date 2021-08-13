@@ -36,13 +36,13 @@ html {
   width: 24px;
   height: 24px;
   background-size: cover;
-  /* transform: rotate(0deg); 
-  transition: transform .3s ease; */
+  transform: rotate(0deg); 
+  transition: transform .3s ease;
 }
 
 .rotate45deg--in {
   transform: rotate(45deg);
-  transition: transform .3s ease;
+  /* transition: transform .3s ease; */
 }
 .rotate45deg--out {
   transform: rotate(0deg); 
@@ -53,7 +53,9 @@ html {
 .faq__anchor {
   display:flex;
   align-items: center;
+  color: #000000;
   text-decoration: none;
+
 }
 .faq__anchor:visited {
   color:black;
