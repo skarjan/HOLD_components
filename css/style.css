@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url(/fonts/OpenSans-Regular.ttf);
+}
+
+html {
+  font-family: 'Open Sans';
+  font-size: 13px;
+
+}
+.row {
+  display: flex;
+}
+
+.col-fw{
+  width:1400px;
+  margin: 0 auto;
+}
+
+.bgc-1 {
+  background-color: #FAFAFA;
+}
+
+.faq__question {
+  height: 32px;
+  width: fit-content;
+}
+
+/* .faq__question:hover .faq__icon-plus {
+  transform: rotate(45deg);
+  transition: transform .3s ease;
+} */
+
+.faq__icon-plus {
+  background-image: url(../img/plus.svg);
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  /* transform: rotate(0deg); 
+  transition: transform .3s ease; */
+}
+
+.rotate45deg--in {
+  transform: rotate(45deg);
+  transition: transform .3s ease;
+}
+.rotate45deg--out {
+  transform: rotate(0deg); 
+  transition: transform .3s ease;
+}
+
+
+.faq__anchor {
+  display:flex;
+  align-items: center;
+  text-decoration: none;
+}
+.faq__anchor:visited {
+  color:black;
+}
+
+.hide {
+  display:none;
+}
