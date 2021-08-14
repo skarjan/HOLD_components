@@ -30,7 +30,7 @@ const CL = (className) => {
 let anchors = CL("faq__anchor");
 
 for (let i = 0; i < anchors.length; i++) {
-  anchors[i].addEventListener("click", function(event){
+  anchors[i].addEventListener("click", function (event) {
 
     // prevents following the link
     event.preventDefault();
@@ -46,37 +46,47 @@ for (let i = 0; i < anchors.length; i++) {
     }
     // answer related to the clicked question
     let answer = event.currentTarget.parentElement.nextElementSibling;
-      
-    if (!hasClass(answer, "hide")){
+
+    if (!hasClass(answer, "hide")) {
       answer.classList.add("hide");
     } else {
+      hideUnselectedAnswers();
       answer.classList.remove("hide");
-      modifyClassFromAll("faq__answer", "hide", "add");
+      // modifyClassFromAll("faq__answer", "hide", "add");
     }
   })
 }
 
-function hideAllElements(selector, className){}
 
-function modifyClassFromAll (element, className, modifier) {
-  let el = document.querySelectorAll("."+element)
+function modifyClassFromAll(element, className, modifier) {
+  let el = document.querySelectorAll("." + element)
   for (let i = 0; i < el.length; i++) {
     if (hasClass(el[i], className)) {
-      if(modifier==="add"){
+      if (modifier === "add") {
         el[i].classList.add(className);
-      } else if(modifier==="remove"){
+      } else if (modifier === "remove") {
         el[i].classList.remove(className);
       } else {
         return false;
       }
-    } 
+    }
   }
 }
-function hasClass(element, className){
-  
+
+function hasClass(element, className) {
+
   if (element.classList != "") {
     return element.classList.contains(className);
   } else {
     return false + `, element doesnt appear to have classes at all.`;
   }
+}
+
+function hideUnselectedAnswers() {
+  let answers = document.getElementsByClassName("faq__answer");
+
+  for (let i = 0; i < answers.length; i++) {
+    answers[i].classList.add("hide");
+  }
+
 }
