@@ -34,12 +34,11 @@ for (let i = 0; i < anchors.length; i++) {
 
     // prevents following the link
     event.preventDefault();
-    // log(event.currentTarget.firstElementChild);
 
     // animate icon
     let icon = event.currentTarget.firstElementChild;
     if (!hasClass(icon, "rotate45deg--in")) {
-      modifyClassFromAll("faq__icon-plus", "rotate45deg--in", "remove")
+      resetAnimation();
       icon.classList.add("rotate45deg--in");
     } else {
       icon.classList.remove("rotate45deg--in");
@@ -57,19 +56,14 @@ for (let i = 0; i < anchors.length; i++) {
   })
 }
 
+function resetAnimation() {
+  let icons = document.querySelectorAll(".faq__icon-plus");
 
-function modifyClassFromAll(element, className, modifier) {
-  let el = document.querySelectorAll("." + element)
-  for (let i = 0; i < el.length; i++) {
-    if (hasClass(el[i], className)) {
-      if (modifier === "add") {
-        el[i].classList.add(className);
-      } else if (modifier === "remove") {
-        el[i].classList.remove(className);
-      } else {
-        return false;
-      }
+  for (let i = 0; i < icons.length; i++) {
+    if (icons[i].classList.contains("rotate45deg--in")) {
+      icons[i].classList.remove("rotate45deg--in");
     }
+
   }
 }
 
