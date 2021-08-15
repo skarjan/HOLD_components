@@ -8,12 +8,13 @@ html {
   font-size: 13px;
 
 }
+
 .row {
   display: flex;
 }
 
-.col-fw{
-  width:1400px;
+.col-fw {
+  width: 1400px;
   margin: 0 auto;
 }
 
@@ -31,7 +32,7 @@ html {
   width: 24px;
   height: 24px;
   background-size: cover;
-  transform: rotate(0deg); 
+  transform: rotate(0deg);
   transition: transform .3s ease;
 }
 
@@ -41,20 +42,21 @@ html {
 }
 
 .faq__anchor {
-  display:flex;
+  display: flex;
   align-items: center;
   color: #000000;
   text-decoration: none;
 
 }
+
 .faq__anchor:visited {
-  color:black;
+  color: black;
 }
+
 .faq__answer__text {
   padding-left: 6px;
 }
 
-
-.hide {
-  display:none;
+.hidden {
+  display: none;
 }

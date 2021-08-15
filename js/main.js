@@ -43,15 +43,16 @@ for (let i = 0; i < anchors.length; i++) {
     } else {
       icon.classList.remove("rotate45deg--in");
     }
+    
     // answer related to the clicked question
     let answer = event.currentTarget.parentElement.nextElementSibling;
 
-    if (!hasClass(answer, "hide")) {
-      answer.classList.add("hide");
+    if (!hasClass(answer, "hidden")) {
+      answer.classList.add("hidden");
     } else {
       hideUnselectedAnswers();
-      answer.classList.remove("hide");
-      // modifyClassFromAll("faq__answer", "hide", "add");
+      answer.classList.remove("hidden");
+      // modifyClassFromAll("faq__answer", "hidden", "add");
     }
   })
 }
@@ -80,7 +81,7 @@ function hideUnselectedAnswers() {
   let answers = document.getElementsByClassName("faq__answer");
 
   for (let i = 0; i < answers.length; i++) {
-    answers[i].classList.add("hide");
+    answers[i].classList.add("hidden");
   }
 
 }
