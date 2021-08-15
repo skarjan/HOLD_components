@@ -38,7 +38,6 @@ html {
 
 .rotate45deg--in {
   transform: rotate(45deg);
-  /* transition: transform .3s ease; */
 }
 
 .faq__anchor {
