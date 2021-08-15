@@ -26,11 +26,6 @@ html {
   width: fit-content;
 }
 
-/* .faq__question:hover .faq__icon-plus {
-  transform: rotate(45deg);
-  transition: transform .3s ease;
-} */
-
 .faq__icon-plus {
   background-image: url(../img/plus.svg);
   width: 24px;
@@ -44,11 +39,6 @@ html {
   transform: rotate(45deg);
   /* transition: transform .3s ease; */
 }
-.rotate45deg--out {
-  transform: rotate(0deg); 
-  transition: transform .3s ease;
-}
-
 
 .faq__anchor {
   display:flex;
@@ -60,6 +50,10 @@ html {
 .faq__anchor:visited {
   color:black;
 }
+.faq__answer__text {
+  padding-left: 6px;
+}
+
 
 .hide {
   display:none;
