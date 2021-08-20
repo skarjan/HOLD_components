@@ -4,9 +4,16 @@
 }
 
 html {
+  box-sizing: border-box;
   font-family: 'Open Sans';
   font-size: 13px;
 
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 .row {
@@ -56,6 +63,13 @@ html {
   padding-left: 6px;
 }
 
+.faq__answer {
+  max-height: 100px;
+  transition: max-height .5s linear;
+}
+
 .hidden {
-  display: none;
+  /* transition: max-height .5s linear; */
+  overflow: hidden; 
+  max-height: 0;
 }
