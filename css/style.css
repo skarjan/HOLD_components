@@ -64,12 +64,13 @@ html {
 }
 
 .faq__answer {
-  max-height: 100px;
-  transition: max-height .5s linear;
+  max-height: fit-content;
+  opacity: 1;
+  transition: max-height .7s linear;
 }
 
 .hidden {
-  /* transition: max-height .5s linear; */
-  overflow: hidden; 
+  transition: max-height .1s linear;
+  opacity: 0;
   max-height: 0;
 }
